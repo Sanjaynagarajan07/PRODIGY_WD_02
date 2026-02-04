@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch — Time Your Moments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <span class="logo"><span class="logo-icon">⏱</span>Stopwatch</span>
+            <p class="tagline">Time your moments with precision</p>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="stopwatch-card">
+            <div class="display-wrap">
+                <div class="display" id="display" aria-live="polite" role="timer">
+                    <span class="display-part" id="hours">00</span><span class="display-sep">:</span>
+                    <span class="display-part" id="minutes">00</span><span class="display-sep">:</span>
+                    <span class="display-part" id="seconds">00</span><span class="display-sep display-sep-dot">.</span>
+                    <span class="display-part" id="centiseconds">00</span>
+                </div>
+                <p class="display-label">Hours : Minutes : Seconds . Centiseconds</p>
+            </div>
+
+            <div class="controls">
+                <button type="button" class="btn btn-start" id="start" aria-label="Start timer">
+                    <span class="btn-icon">▶</span> Start
+                </button>
+                <button type="button" class="btn btn-stop" id="stop" disabled aria-label="Stop timer">
+                    <span class="btn-icon">⏸</span> Stop
+                </button>
+                <button type="button" class="btn btn-lap" id="lap" disabled aria-label="Record lap">
+                    <span class="btn-icon">⏱</span> Lap
+                </button>
+                <button type="button" class="btn btn-reset" id="reset" aria-label="Reset timer">
+                    <span class="btn-icon">↺</span> Reset
+                </button>
+            </div>
+
+            <section class="laps-section" id="lapsSection" aria-label="Lap times">
+                <h2 class="laps-title">Lap times</h2>
+                <ul class="laps-list" id="lapsList"></ul>
+                <p class="laps-empty" id="lapsEmpty">No laps yet. Press Lap while running.</p>
+            </section>
+        </div>
+
+        <p class="keyboard-hint">Tip: Press <kbd>Space</kbd> to start/stop, <kbd>L</kbd> for lap, <kbd>R</kbd> to reset</p>
+    </main>
+
+    <footer class="footer">
+        <p>Stopwatch — Simple, accurate, free to use</p>
+    </footer>
+
+    <script src="watch.js"></script>
+</body>
+</html>
